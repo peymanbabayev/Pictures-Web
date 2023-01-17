@@ -3,10 +3,12 @@ import SearchBar from "./components/SearchBar";
 import searchImages from './api';
 import ImageList from './components/ImageList';
 import './Container.css'
+
+
 function App() {
     const [images, setImages] = useState([])
 
-    const handleSubmit = async (term)=>{
+    const handleSubmit = async (term) => {
         const result = await searchImages(term)
         setImages(result)
     };
@@ -15,7 +17,7 @@ function App() {
 
     return (
         <div className="container">
-            <SearchBar onSubmit={handleSubmit}/>
+            <SearchBar onSubmit={handleSubmit} />
             <ImageList images={images} />
         </div>
     );
